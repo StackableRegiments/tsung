@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE tsung SYSTEM "/usr/share/tsung/tsung-1.0.dtd" [] >
+<tsung backend="json">
+
+  <clients>
+    <client host="localhost" />
+  </clients>
+
+  <servers>
+    <server host="192.168.20.176" port="8080" type="tcp"></server>
+  </servers>
+
+  <load>
+    <arrivalphase phase="1" duration="5" unit="minute">
+      <users arrivalrate="100" unit="second" />
+    </arrivalphase>
+  </load>
+
+  <sessions>
+    <session name="es_load" weight="1" type="ts_http">
+      <request>
+        <http url="/fullClientHistory?source=18001" method="GET" />
+      </request>
+    </session>
+  </sessions>
+
+</tsung>
