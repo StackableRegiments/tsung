@@ -1,1 +1,1 @@
-docker run -it stackable/tsung
+docker run -v ~/Desktop/Tsung/logs:/srv/logs -it stackable/tsung
