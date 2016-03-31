@@ -9,4 +9,4 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tsung vim openssh-server y
 RUN (echo "ssh-keygen -t rsa -f rsa.pub -N ''")
 RUN (echo "cat rsa >> ~/.ssh/authorized_keys")
 
-CMD ["tsung -f /srv/scripts/simple.xml -l /srv/logs start"]
+CMD ["/usr/bin/tsung", "-f /srv/scripts/simple.xml", "-l /srv/logs", "start"]
